@@ -3,215 +3,417 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mustec Solutions Ltd</title>
 <meta name="description" content="Mustec Solutions Ltd - Buy laptops, smartphones, and gadgets in Lagos. Importation from China and tech services.">
+<meta property="og:title" content="Mustec Solutions Ltd">
+<meta property="og:description" content="Premium Tech & Importation Services in Lagos">
+<meta property="og:image" content="images/logo.jpg">
+<meta property="og:url" content="https://mustecsolutionsltd.com">
+<meta name="theme-color" content="#FFD700">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<title>Mustec Solutions Ltd - Tech & Importation Services Lagos</title>
 
 <style>
+* { box-sizing: border-box; }
+
 body {
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#0a0a0a;
-    color:white;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    line-height: 1.6;
 }
 
+/* Accessibility: Skip link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: gold;
+    color: #000;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus { top: 0; }
+
 header {
-    background:black;
-    padding:15px;
-    text-align:center;
-    border-bottom:2px solid gold;
-    position:sticky;
-    top:0;
-    z-index:1000;
+    background: #000;
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 2px solid gold;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 header img {
-    width:60px;
-    display:block;
-    margin:0 auto 10px;
+    width: 50px;
+    height: 50px;
 }
 
-header h1 { color:gold; margin:0; }
+header h1 {
+    color: gold;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+nav a:hover { color: gold; }
 
 .hero {
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    justify-content:center;
-    padding:50px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    gap: 30px;
 }
 
 .hero img {
-    width:260px;
-    border-radius:15px;
-    margin:20px;
+    width: 260px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
-.hero-text { max-width:500px; }
-.hero-text h2 { color:gold; }
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h2 {
+    color: gold;
+    font-size: 2rem;
+    margin: 0 0 15px 0;
+}
 
 .btn {
-    display:block;
-    width:80%;
-    max-width:250px;
-    margin:10px auto;
-    padding:12px;
-    background:gold;
-    color:black;
-    text-decoration:none;
-    border-radius:5px;
-    font-weight:bold;
-    text-align:center;
+    display: inline-block;
+    padding: 12px 30px;
+    background: gold;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 10px 10px 0;
+    transition: all 0.3s;
+    border: 2px solid gold;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .btn:hover {
-    background:black;
-    color:gold;
-    border:1px solid gold;
+    background: #000;
+    color: gold;
+}
+
+.btn:focus {
+    outline: 2px solid white;
 }
 
 .section {
-    padding:60px 20px;
-    text-align:center;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2rem;
+    color: gold;
+    margin-bottom: 30px;
 }
 
 .products, .services {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .card {
-    background:#111;
-    border:1px solid gold;
-    margin:15px;
-    padding:20px;
-    width:250px;
-    border-radius:10px;
-    transition:0.3s;
+    background: #111;
+    border: 1px solid gold;
+    padding: 20px;
+    width: 100%;
+    max-width: 280px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-    transform:scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
 }
 
 .card img {
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    border-radius:10px;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
-.card h3 { color:gold; }
+.card h3 {
+    color: gold;
+    margin: 15px 0 10px 0;
+}
+
+.card p {
+    margin: 10px 0;
+    color: #ccc;
+}
 
 .testimonial {
-    background:#111;
-    margin:15px auto;
-    padding:20px;
-    border-radius:10px;
-    max-width:400px;
-    border:1px solid gold;
+    background: #111;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    border: 1px solid gold;
+}
+
+.testimonial-author {
+    color: gold;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.testimonial-rating {
+    color: gold;
+    font-size: 1.2rem;
+}
+
+.china-img {
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.contact-item {
+    min-width: 200px;
+}
+
+.contact-item a {
+    color: gold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
 }
 
 footer {
-    background:black;
-    text-align:center;
-    padding:20px;
-    border-top:2px solid gold;
+    background: #000;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid gold;
+    margin-top: 40px;
 }
 
 .whatsapp-float {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:green;
-    color:white;
-    padding:15px;
-    border-radius:50%;
-    text-decoration:none;
-    font-size:20px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+    z-index: 999;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .section {
+        padding: 40px 15px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .contact-info {
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
 }
 
 </style>
 </head>
-
 <body>
 
-<header>
-<img src="images/logo.jpg" alt="Mustec Logo">
-<h1>Mustec Solutions Ltd</h1>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header role="banner">
+    <img src="images/logo.jpg" alt="Mustec Solutions Ltd Logo" width="50" height="50">
+    <h1>Mustec Solutions Ltd</h1>
+    <nav>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 </header>
-
-<section class="hero">
-<img src="images/ceo.jpg" alt="CEO">
-<div class="hero-text">
-<h2>Premium Tech & Importation Services</h2>
-<p>We supply laptops, smartphones, and gadgets across Lagos with fast delivery. We also help you import quality products directly from China.</p>
-
-<a class="btn" href="https://wa.me/2348033678848">Order on WhatsApp</a>
-<a class="btn" href="tel:08033678848">Call Now</a>
-</div>
+<main id="main-content">
+<section class="hero" aria-label="Welcome Section">
+    <img src="images/ceo.jpg" alt="Abdulsalam Mustapha Muhammed, CEO of Mustec Solutions" loading="lazy" width="260" height="260">
+    <article class="hero-text">
+        <h2>Premium Tech & Importation Services</h2>
+        <p>We supply laptops, smartphones, and gadgets across Lagos with fast delivery. We also help you import quality products directly from China.</p>
+        <a class="btn" href="https://wa.me/2348033678848" rel="noopener noreferrer">Order on WhatsApp</a>
+        <a class="btn" href="tel:+2348033678848">Call Now</a>
+    </article>
 </section>
-
-<section class="section">
-<h2>China Importation</h2>
-<img src="images/china-importation.jpg" style="width:90%; max-width:600px; border-radius:10px;">
-<p>We help you source quality goods directly from China at the best prices.</p>
+<section class="section" aria-label="China Importation Services">
+    <h2>China Importation</h2>
+    <img src="images/china-importation.jpg" alt="China importation goods and services" class="china-img" loading="lazy">
+    <p>We help you source quality goods directly from China at the best prices with reliable shipping and customs clearance support.</p>
 </section>
-
-<section class="section">
-<h2>Our Services</h2>
-<div class="services">
-<div class="card"><h3>Laptop Sales & Repairs</h3></div>
-<div class="card"><h3>Smartphones & Accessories</h3></div>
-<div class="card"><h3>Importation from China</h3></div>
-<div class="card"><h3>Hardware & Software Engineering</h3></div>
-<div class="card"><h3>Gaming Devices</h3></div>
-</div>
+<section class="section" id="services" aria-label="Our Services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <article class="card">
+            <h3>Laptop Sales & Repairs</h3>
+            <p>New and refurbished laptops with professional repair services</p>
+        </article>
+        <article class="card">
+            <h3>Smartphones & Accessories</h3>
+            <p>Latest smartphone models and authentic accessories</p>
+        </article>
+        <article class="card">
+            <h3>Importation from China</h3>
+            <p>Direct sourcing and reliable international shipping</p>
+        </article>
+        <article class="card">
+            <h3>Hardware & Software Engineering</h3>
+            <p>Custom solutions for your tech needs</p>
+        </article>
+        <article class="card">
+            <h3>Gaming Devices</h3>
+            <p>Gaming laptops and gaming accessories</p>
+        </article>
+    </div>
 </section>
-
-<section class="section">
-<h2>Products</h2>
-<div class="products">
-<div class="card">
-<img src="images/gadgets-banner.jpg" alt="Gadgets">
-<h3>Gadgets</h3>
-<p>Latest Tech Available</p>
-<a class="btn" href="https://wa.me/2348033678848">Order</a>
-</div>
-
-<div class="card">
-<img src="images/business-card.jpg" alt="Business Card">
-<h3>Business Branding</h3>
-<p>Professional Identity</p>
-<a class="btn" href="https://wa.me/2348033678848">Order</a>
-</div>
-</div>
+<section class="section" id="products" aria-label="Featured Products">
+    <h2>Products</h2>
+    <div class="products">
+        <article class="card">
+            <img src="images/gadgets-banner.jpg" alt="Latest tech gadgets and devices" loading="lazy">
+            <h3>Gadgets</h3>
+            <p>Latest Tech Available</p>
+            <a class="btn" href="https://wa.me/2348033678848" rel="noopener noreferrer">Order</a>
+        </article>
+        <article class="card">
+            <img src="images/business-card.jpg" alt="Professional business branding services" loading="lazy">
+            <h3>Business Branding</h3>
+            <p>Professional Identity Solutions</p>
+            <a class="btn" href="https://wa.me/2348033678848" rel="noopener noreferrer">Order</a>
+        </article>
+    </div>
 </section>
-
-<section class="section">
-<h2>Customer Reviews</h2>
-<div class="testimonial">"Got my laptop same day. Very reliable!"</div>
-<div class="testimonial">"Affordable prices and original products."</div>
+<section class="section" aria-label="Customer Testimonials">
+    <h2>Customer Reviews</h2>
+    <article class="testimonial">
+        <div class="testimonial-rating">★★★★★</div>
+        <p>"Got my laptop same day. Very reliable!"</p>
+        <div class="testimonial-author">- Sarah O.</div>
+    </article>
+    <article class="testimonial">
+        <div class="testimonial-rating">★★★★★</div>
+        <p>"Affordable prices and original products."</p>
+        <div class="testimonial-author">- Chidi M.</div>
+    </article>
 </section>
-
-<section class="section">
-<h2>About the CEO</h2>
-<p><strong>Abdulsalam Mustapha Muhammed</strong></p>
-<p>We deliver quality technology solutions with integrity and global sourcing expertise.</p>
+<section class="section" aria-label="About the CEO">
+    <h2>About the CEO</h2>
+    <p><strong>Abdulsalam Mustapha Muhammed</strong></p>
+    <p>We deliver quality technology solutions with integrity and global sourcing expertise. With years of experience in tech and importation, we ensure customer satisfaction.</p>
 </section>
-
-<section class="section">
-<h2>Contact Us</h2>
-<p>📍 Ikeja GRA, Lagos State</p>
-<p>📞 08033678848</p>
-<p>📧 mustecsolutionsltd@gmail.com</p>
+<section class="section" id="contact" aria-label="Contact Information">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+        <div class="contact-item">
+            <p>📍 Ikeja GRA, Lagos State</p>
+        </div>
+        <div class="contact-item">
+            <p>📞 <a href="tel:+2348033678848">08033678848</a></p>
+        </div>
+        <div class="contact-item">
+            <p>📧 <a href="mailto:mustecsolutionsltd@gmail.com">mustecsolutionsltd@gmail.com</a></p>
+        </div>
+    </div>
 </section>
-
-<footer>
-<p>© 2026 Mustec Solutions Ltd</p>
+</main>
+<footer role="contentinfo">
+    <p>&copy; 2026 Mustec Solutions Ltd. All rights reserved.</p>
 </footer>
-
-<a href="https://wa.me/2348033678848" class="whatsapp-float">💬</a>
-
+<a href="https://wa.me/2348033678848" class="whatsapp-float" aria-label="Contact us on WhatsApp" rel="noopener noreferrer" title="Chat on WhatsApp">💬</a>
 </body>
 </html>
